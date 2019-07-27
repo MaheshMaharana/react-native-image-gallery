@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
-import { View, Text, Image, ViewPropTypes } from 'react-native';
+import { View, Text, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import ViewTransformer from '../ViewTransformer';
+import Image from 'react-native-image-progress';
+import ProgressBar from 'react-native-progress/Bar';
 
 export default class TransformableImage extends PureComponent {
     static propTypes = {
@@ -172,7 +174,12 @@ export default class TransformableImage extends PureComponent {
             capInsets: { left: 0.1, top: 0.1, right: 0.1, bottom: 0.1 }
         };
 
-        const content = imageComponent ? imageComponent(imageProps, imageDimensions) : <Image { ...imageProps } />;
+        const content = imageComponent ? imageComponent(imageProps, imageDimensions) : 
+       <Image 
+       source= {image.source}
+       indicator={ProgressBar} 
+       style={[style, { backgroundColor: 'transparent' }]}/>
+       ;
 
         return (
             <ViewTransformer
