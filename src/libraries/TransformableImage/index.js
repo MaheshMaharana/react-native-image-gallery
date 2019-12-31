@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, Text, ViewPropTypes } from 'react-native';
+import { View, Text, ViewPropTypes,Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import ViewTransformer from '../ViewTransformer';
 import Image from 'react-native-image-progress';
