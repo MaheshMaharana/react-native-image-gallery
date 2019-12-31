@@ -178,7 +178,7 @@ export default class TransformableImage extends PureComponent {
        <Image 
        source= {image.source}
        indicator={ProgressBar} 
-       style={[style, { backgroundColor: 'transparent' }]}/>
+       style={[style, {width:"100%",height: Dimensions.get('window').height*.60, backgroundColor: 'transparent' }]}/>
        ;
 
         return (
