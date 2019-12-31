@@ -175,10 +175,13 @@ export default class TransformableImage extends PureComponent {
         };
 
         const content = imageComponent ? imageComponent(imageProps, imageDimensions) : 
+                <View style={{flex:1,justifyContent:"center",alignContent:"center",alignItems:"center"}}>
+
        <Image 
        source= {image.source}
        indicator={ProgressBar} 
        style={[style, {width:"100%",height: Dimensions.get('window').height*.60, backgroundColor: 'transparent' }]}/>
+           </View>
        ;
 
         return (
